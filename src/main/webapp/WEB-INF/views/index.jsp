@@ -43,7 +43,7 @@
 	
 		<div class="container">
 			<div class="intro-text"
-				style="padding-top: 150px; padding-bottom: 200px;">
+				style="padding-top: 150px;">
 				<div class="intro-lead-in">Bienvenue sur le système
 					d'information</div>
 				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
