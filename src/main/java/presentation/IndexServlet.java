@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import metier.Client;
 import service.ClientService;
 
 
@@ -32,7 +33,6 @@ public class IndexServlet extends HttpServlet{
 		String lastname = req.getParameter("identity");
 		String firstname = req.getParameter("identity");
 		ClientService service = ClientService.getInstance();
-		service.addArticle(lastname, firstname);
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
 	}
 
