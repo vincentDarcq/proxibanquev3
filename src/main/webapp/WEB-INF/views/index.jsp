@@ -50,7 +50,7 @@
 		<h1>Veuillez remplir le champs avec votre nom et votre prénom.</h1>
 		<div>
 			<label for="identity">Nom et Prénom : </label>
-			<input id="identity" name="identity">
+			<input id="identity" name="lastname">
 		</div>
 		<button>Valider</button>
 </body>

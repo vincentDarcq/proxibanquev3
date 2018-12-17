@@ -30,10 +30,13 @@ public class IndexServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String lastname = req.getParameter("identity");
-		String firstname = req.getParameter("identity");
-		ClientService service = ClientService.getInstance();
+		String name = req.getParameter("lastname");
+		String [] array = name.split(" ");
+		String lastname = array[0];
+		String firstname = array[1];
+		req.setAttribute("lastname", lastname);
+		req.setAttribute("firstname", firstname);
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
 	}
-
+ 
 }
