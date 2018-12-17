@@ -13,12 +13,8 @@ public class AccountService {
 	
 	private static final AccountService INSTANCE = new AccountService();
 	private  AccountDao daoAccount;
-<<<<<<< HEAD
-	private ClientDao clientDao;
-=======
-	private  ClientDao clientDao;
 
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
+	private ClientDao clientDao;
 
 	/**
 	 * Retourne le singleton de la classe.
@@ -45,14 +41,7 @@ public class AccountService {
 
 	}
 	
-	public List<Account> getAll(Integer idClient) {
-        List<Account> accounts = new ArrayList<>();
 
-        accounts = this.clientDao.read(idClient).getAccounts();
-
-        return accounts;
-
-    }
 	
 	
 	public Account read(Integer id) {

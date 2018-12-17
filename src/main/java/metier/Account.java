@@ -6,12 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-<<<<<<< HEAD
 
-=======
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
+
 import javax.persistence.Table;
 
 @Entity
@@ -29,12 +27,9 @@ public class Account {
 	private Float balance;
 
 	@Column
-<<<<<<< HEAD
-	private String label;
-=======
 	private String number;
 	
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
+
 
 	@Column
 	private String openningDate;
@@ -42,12 +37,10 @@ public class Account {
 	public Account() {
 	}
 
-<<<<<<< HEAD
-	public Account(Integer id, Float balance, String label, String openningDate, Cheque cheque, Card card) {
-=======
+
 
 	public Account(Integer id, Float balance, String number, String openningDate, Cheque cheque, Card card) {
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
+
 		this.id = id;
 		this.balance = balance;
 		this.number = number;
@@ -55,12 +48,6 @@ public class Account {
 
 	}
 
-<<<<<<< HEAD
-=======
-	
-
-
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
 	public Integer getId() {
 		return id;
 	}
@@ -86,8 +73,6 @@ public class Account {
 		this.openningDate = openningDate;
 	}
 
-<<<<<<< HEAD
-=======
 	
 	public String getNumber() {
 		return number;
@@ -98,5 +83,5 @@ public class Account {
 		this.number = number;
 	}
 	
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
+
 }
