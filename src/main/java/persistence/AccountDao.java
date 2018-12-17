@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import metier.Account;
-import metier.Client;
 
 public class AccountDao extends AbstractDao<Account>{
 
@@ -22,7 +21,6 @@ public class AccountDao extends AbstractDao<Account>{
 
 	@Override
 	public Account create(Account entity) {
-		// TODO Auto-generated method stub
 		return super.create(entity);
 	}
 

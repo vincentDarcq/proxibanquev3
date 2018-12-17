@@ -5,15 +5,14 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import metier.Account;
 import metier.Check;
 
-public class CheckDao extends AbstractDao<Check>{
+public class ChequeDao extends AbstractDao<Check>{
 
-	private static final CheckDao INSTANCE = new CheckDao();
+	private static final ChequeDao INSTANCE = new ChequeDao();
 	
-	public static CheckDao getInstance() {
-		return CheckDao.INSTANCE;
+	public static ChequeDao getInstance() {
+		return ChequeDao.INSTANCE;
 	}
 
 	@Override

@@ -46,7 +46,6 @@
 			</div>
 		</div>
 	</header>
-<body>
 		<h1>Veuillez remplir le champs avec votre nom et votre prénom.</h1>
 		<div>
 			<label for="identity">Nom et Prénom : </label>

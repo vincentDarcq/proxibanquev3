@@ -1,7 +1,6 @@
 package service;
 
-import metier.Account;
-import metier.Client;
+
 
 public class TransferService {
 	
@@ -19,15 +18,8 @@ public class TransferService {
 	 * @return
 	 */
 	public boolean transfer(Float value, Integer debitId, Integer creditId, Integer clientId) {
-<<<<<<< HEAD
-		return false;
-
-=======
-		
-
             return true;
         }
->>>>>>> cc47da31d9f53ab858c6f6d4ebc7ad87141053fc
     }
 
 
