@@ -30,28 +30,24 @@ public class IndexServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Client client = new Client();
+		Client client = null;
 		String name = req.getParameter("lastname");
 		String [] array = name.split(" ");
-<<<<<<< HEAD
+
 		String lastname = array[0];
 		String firstname = array[1];
-		Client client = ClientService.getInstance().read(lastname, firstname);
+		client = ClientService.getInstance().read(lastname, firstname);
 		
 		if (client == null) {
 			client = ClientService.getInstance().read(firstname, lastname);
 			if (client == null) {
-				this.getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/views/error.jsp").forward(req, resp);
 			}
 		}
 		
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/tableau.html?id=" + client.getId());
-=======
-		client.setLastname(array[0]);
-		client.setFirstname(array[1]);
-		ClientService service = ClientService.getInstance();
-		resp.sendRedirect(this.getServletContext().getContextPath() + "/customer.html");
->>>>>>> 0cce6fda43deeb1bbaacfaf1407394a627d27cda
+
+		
 	}
  
 }

@@ -18,6 +18,8 @@ public class AccountDao extends AbstractDao<Account>{
 		accounts.addAll(query.getResultList());
 		return accounts; 
 	}
+	
+	
 
 	@Override
 	public Account create(Account entity) {

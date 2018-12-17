@@ -32,6 +32,7 @@ public class AccountService {
 		return this.daoAccount.readAll();
 	}	
 	
+	
 	public Account read(Integer id) {
 		return this.daoAccount.read(id);
 	}
