@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+>>>>>>> 0cce6fda43deeb1bbaacfaf1407394a627d27cda
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +40,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 	<section class="head"></section>
 		<section class="account-body">
 			<div class="header-account">
@@ -62,5 +68,19 @@
 			</div>
 		</div>
 	</footer>
+=======
+	<h1>Bienvenue sur votre tableau de bord</h1>
+	<div>
+		<label for="comptes">Liste de vos comptes</label> <select id="comptes"
+			name="comptes">
+			<option value="">----</option>
+			<c:forEach var="comptes" items="${account}">
+				<option id="${chocoType.id}" value="${chocoType.value}">${chocoType.label}</option>
+
+			</c:forEach>
+		</select>
+		<div id="stockinfo"></div>
+	</div>
+>>>>>>> 0cce6fda43deeb1bbaacfaf1407394a627d27cda
 </body>
 </html>

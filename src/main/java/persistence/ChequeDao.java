@@ -5,9 +5,9 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
-import metier.Cheque;
+import metier.Check;
 
-public class ChequeDao extends AbstractDao<Cheque>{
+public class ChequeDao extends AbstractDao<Check>{
 
 	private static final ChequeDao INSTANCE = new ChequeDao();
 	
@@ -16,15 +16,15 @@ public class ChequeDao extends AbstractDao<Cheque>{
 	}
 
 	@Override
-	public List<Cheque> readAll() {
-		List<Cheque> Cheques = new ArrayList<>();
-		TypedQuery<Cheque> query = this.em.createQuery(SqlQueries.SELECT_ALL_CHEQUES, Cheque.class);
-		Cheques.addAll(query.getResultList());
-		return Cheques; 
+	public List<Check> readAll() {
+		List<Check> checks = new ArrayList<>();
+		TypedQuery<Check> query = this.em.createQuery(SqlQueries.SELECT_ALL_CHECKS, Check.class);
+		checks.addAll(query.getResultList());
+		return checks; 
 	}
 
 	@Override
-	public Cheque create(Cheque entity) {
+	public Check create(Check entity) {
 		// TODO Auto-generated method stub
 		return super.create(entity);
 	}

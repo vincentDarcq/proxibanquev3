@@ -51,8 +51,12 @@
 		</div>
 		
 	</header>
+<<<<<<< HEAD
 	<form method="post" action="index.html">
 		<h1>Veuillez vous identifier</h1>
+=======
+		<h1>Veuillez remplir le champs avec votre nom et votre prÃ©nom.</h1>
+>>>>>>> 0cce6fda43deeb1bbaacfaf1407394a627d27cda
 		<div>
 			<label for="identity">Nom et Prénom : </label>
 			<input id="identity" name="lastname">

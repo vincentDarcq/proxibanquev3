@@ -1,7 +1,6 @@
 package presentation;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import metier.Client;
 import service.ClientService;
+
+
 
 
 
@@ -23,15 +24,16 @@ public class IndexServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Client> clients = ClientService.getInstance().getAll();
-		req.setAttribute("clients", clients);
+
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Client client = new Client();
 		String name = req.getParameter("lastname");
 		String [] array = name.split(" ");
+<<<<<<< HEAD
 		String lastname = array[0];
 		String firstname = array[1];
 		Client client = ClientService.getInstance().read(lastname, firstname);
@@ -44,6 +46,12 @@ public class IndexServlet extends HttpServlet{
 		}
 		
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/tableau.html?id=" + client.getId());
+=======
+		client.setLastname(array[0]);
+		client.setFirstname(array[1]);
+		ClientService service = ClientService.getInstance();
+		resp.sendRedirect(this.getServletContext().getContextPath() + "/customer.html");
+>>>>>>> 0cce6fda43deeb1bbaacfaf1407394a627d27cda
 	}
  
 }
