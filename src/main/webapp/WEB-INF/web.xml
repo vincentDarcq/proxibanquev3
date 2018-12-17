@@ -14,4 +14,15 @@
 		<servlet-name>Servlet Accueil</servlet-name>
 		<url-pattern>/index.html</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ClientServlet</servlet-name>
+		<servlet-class>presentation.ClientServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ClientServlet</servlet-name>
+		<url-pattern>/tableau.html</url-pattern>
+	</servlet-mapping>
 </web-app>

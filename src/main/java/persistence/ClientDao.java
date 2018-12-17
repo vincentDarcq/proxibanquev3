@@ -3,6 +3,7 @@ package persistence;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import metier.Client;
@@ -30,5 +31,18 @@ public class ClientDao extends AbstractDao<Client> {
 
 	public static ClientDao getInstance() {
 		return ClientDao.INSTANCE;
+	}
+	
+	public Client read(String lastname, String firstname) {
+		Client client = null;
+		TypedQuery<Client> query = this.em.createQuery(SqlQueries.SELECT_CLIENT_BY_NAME, Client.class);
+		query.setParameter("lastname", lastname);
+		query.setParameter("firstname", firstname);
+		try {
+		client= query.getSingleResult();
+		} catch (PersistenceException e) {
+	}
+	
+		return client;
 	}
 }

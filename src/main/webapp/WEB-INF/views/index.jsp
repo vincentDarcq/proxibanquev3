@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>ProxiBanque SI</title>
+<title>Accueil</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,23 +36,28 @@
 </head>
 
 <body id="page-top">
+
 	<!-- Header -->
+	
 	<header class="masthead">
+	
 		<div class="container">
 			<div class="intro-text"
 				style="padding-top: 150px; padding-bottom: 200px;">
-				<div class="intro-lead-in">Bienvenue sur le syst√®me
+				<div class="intro-lead-in">Bienvenue sur le systËme
 					d'information</div>
 				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
 			</div>
 		</div>
+		
 	</header>
-<body>
-		<h1>Veuillez remplir le champs avec votre nom et votre pr√©nom.</h1>
+	<form method="post" action="index.html">
+		<h1>Veuillez vous identifier</h1>
 		<div>
-			<label for="identity">Nom et Pr√©nom : </label>
+			<label for="identity">Nom et PrÈnom : </label>
 			<input id="identity" name="lastname">
 		</div>
 		<button>Valider</button>
+</form>
 </body>
 </html>

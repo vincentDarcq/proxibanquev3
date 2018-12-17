@@ -34,9 +34,16 @@ public class IndexServlet extends HttpServlet{
 		String [] array = name.split(" ");
 		String lastname = array[0];
 		String firstname = array[1];
-		req.setAttribute("lastname", lastname);
-		req.setAttribute("firstname", firstname);
-		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
+		Client client = ClientService.getInstance().read(lastname, firstname);
+		
+		if (client == null) {
+			client = ClientService.getInstance().read(firstname, lastname);
+			if (client == null) {
+				this.getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
+			}
+		}
+		
+		resp.sendRedirect(this.getServletContext().getContextPath() + "/tableau.html?id=" + client.getId());
 	}
  
 }

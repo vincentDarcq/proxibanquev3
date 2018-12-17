@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Check {
+public class Cheque {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

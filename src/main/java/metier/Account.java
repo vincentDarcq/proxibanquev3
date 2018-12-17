@@ -28,8 +28,8 @@ public class Account {
 	private String openningDate;
 	
 	@OneToOne
-	@JoinColumn(name = "check_id", referencedColumnName = "id")
-	private Check check;
+	@JoinColumn(name = "Cheque_id", referencedColumnName = "id")
+	private Cheque cheque;
 	
 	@OneToOne
 	@JoinColumn(name = "card_id", referencedColumnName = "id")
@@ -37,12 +37,12 @@ public class Account {
 	
 	
 
-	public Account(Integer id, Float balance, String label, String openningDate, Check check, Card card) {
+	public Account(Integer id, Float balance, String label, String openningDate, Cheque cheque, Card card) {
 		this.id = id;
 		this.balance = balance;
 		this.label = label;
 		this.openningDate = openningDate;
-		this.check = check;
+		this.cheque = cheque;
 		this.card = card;
 	}
 
@@ -86,12 +86,12 @@ public class Account {
 		this.openningDate = openningDate;
 	}
 
-	public Check getCheck() {
-		return check;
+	public Cheque getCheque() {
+		return cheque;
 	}
 
-	public void setCheck(Check check) {
-		this.check = check;
+	public void setCheque(Cheque Cheque) {
+		this.cheque = Cheque;
 	}
 
 	
