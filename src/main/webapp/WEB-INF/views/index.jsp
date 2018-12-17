@@ -52,5 +52,6 @@
 			<label for="identity">Nom et Prénom : </label>
 			<input id="identity" name="identity">
 		</div>
+		<button>Valider</button>
 </body>
 </html>
