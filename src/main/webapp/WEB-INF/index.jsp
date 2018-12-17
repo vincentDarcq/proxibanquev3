@@ -35,7 +35,6 @@
 </head>
 
 <body id="page-top">
-	<jsp:include page="/WEB-INF/views/advisor.jsp" />
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
@@ -48,7 +47,6 @@
 		</div>
 	</header>
 <body>
-	<form method="post" action="">
 		<h1>Veuillez remplir le champs avec votre nom et votre prénom.</h1>
 		<div>
 			<label for="identity">Nom et Prénom : </label>
