@@ -10,7 +10,7 @@ import metier.Client;
 
 public class ClientDao extends AbstractDao<Client> {
 
-	private static final ClientDao CLIENT_INS = new ClientDao();
+	private static final ClientDao INSTANCE = new ClientDao();
 	
 
 	@Override
@@ -29,6 +29,6 @@ public class ClientDao extends AbstractDao<Client> {
 
 
 	public static ClientDao getInstance() {
-		return ClientDao.CLIENT_INS;
+		return ClientDao.INSTANCE;
 	}
 }
