@@ -1,8 +1,15 @@
 package service;
 
 
+import metier.Account;
+import metier.Client;
+import persistence.AccountDao;
+import persistence.ClientDao;
 
 public class TransferService {
+	
+	private  ClientDao daoClient;
+	private  AccountDao daoAccount;
 	
 	/**	/**
 	 * Permet de faire un virement entre deux comptes d'un m�me client. Cette
@@ -18,8 +25,24 @@ public class TransferService {
 	 * @return
 	 */
 	public boolean transfer(Float value, Integer debitId, Integer creditId, Integer clientId) {
+		boolean transferOK = true;
+        Client client = this.daoClient.read(clientId);
+        Account compteDebite = client.getAccountById(debitId);
+        Account compteCredite = client.getAccountById(creditId);
+        if (compteDebite.getId() == compteCredite.getId()) {
+            return transferOK;
+        } else if (compteDebite.getBalance() - value < 0) {
+            transferOK = false;
+            return transferOK;
+        } else {
+            compteCredite.setBalance(compteCredite.getBalance() + value);
+            this.daoAccount.update(compteCredite);
 
-            return true;
+            compteDebite.setBalance(compteDebite.getBalance() - value);
+            this.daoAccount.update(compteDebite);
+
+            return transferOK;
+        }
         }
 
 }

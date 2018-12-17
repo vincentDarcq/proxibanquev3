@@ -40,17 +40,31 @@
 <body>
 
 	<section class="head"></section>
-		<section class="account-body">
-			<div class="header-account">
-				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname}</h1>
-				<div class="transfer-button">
-					
-				</div>
-			</div>
-			
-		</section>
-		
-		<!-- Footer -->
+	<section class="account-body">
+		<div class="header-account">
+			<h1 class="page-title">Liste des comptes de ${client.firstname}
+				${client.lastname}</h1>
+			<div class="transfer-button"></div>
+		</div>
+
+	</section>
+
+	<!-- Footer -->
+	<h1>Bienvenue sur votre tableau de bord</h1>
+				<a href="transfer.html?id=${client.id}">
+					<button class="button">Virement</button>
+				</a>
+	<div>
+		<label for="comptes">Liste des comptes de ${client.firstname}
+			${client.lastname}</label> <select id="comptes" name="comptes">
+			<option value="">----</option>
+			<c:forEach var="account" items="${accountList}">
+				<option id="${account.id}" value="${account.label}">${account.balance}
+					${account.label} ${account.openningDate}</option>
+			</c:forEach>
+		</select>
+		<div id="stockinfo"></div>
+	</div>
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -67,18 +81,6 @@
 		</div>
 	</footer>
 
-	<h1>Bienvenue sur votre tableau de bord</h1>
-	<div>
-		<label for="comptes">Liste de vos comptes</label> <select id="comptes"
-			name="comptes">
-			<option value="">----</option>
-			<c:forEach var="account" items="${accountList}">
-				<option id="${account.id}" value="${account.label}">${account.balance}</option>
-
-			</c:forEach>
-		</select>
-		<div id="stockinfo"></div>
-	</div>
 
 </body>
 </html>

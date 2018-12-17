@@ -51,7 +51,6 @@ public class AbstractDao<T> implements Dao<T> {
 
 	@Override
 	public T read(Integer id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

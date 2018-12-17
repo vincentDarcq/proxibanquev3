@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
+
 @Entity
 @Table
 public class Client {
@@ -96,5 +97,15 @@ public class Client {
 		this.accounts = accounts;
 	}
 
+	public Account getAccountById(Integer searchId) {
+		Account result = null;
+		for (Account a : this.accounts) {
+			if (a.getId().equals(searchId)) {
+				result = a;
+				break;
+			}
+		}
+		return result;
+	}
 	
 }

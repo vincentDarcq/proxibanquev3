@@ -25,4 +25,14 @@
 		<servlet-name>ClientServlet</servlet-name>
 		<url-pattern>/tableau.html</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>TransferServlet</servlet-name>
+		<servlet-class>presentation.ClientServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>TransferServlet</servlet-name>
+		<url-pattern>/transfer.html</url-pattern>
+	</servlet-mapping>
 </web-app>

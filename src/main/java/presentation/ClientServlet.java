@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import metier.Account;
-import service.AccountService;
+import metier.Client;
 import service.ClientService;
 
 public class ClientServlet extends HttpServlet{
@@ -25,11 +25,11 @@ public class ClientServlet extends HttpServlet{
 
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		List<Account> accounts = ClientService.getInstance().read(id).getAccounts();
+		Client client = ClientService.getInstance().read(id);
 		req.setAttribute("accountList", accounts);
+		req.setAttribute("client", client);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/tableau.jsp").forward(req, resp);
 	}
-
-	
  
 }
 
