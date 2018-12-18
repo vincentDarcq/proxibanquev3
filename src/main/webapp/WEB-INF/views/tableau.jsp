@@ -37,33 +37,11 @@
 <body>
 	
 	<section class="head"></section>
-<<<<<<< HEAD
-	<section class="account-body">
-		<div class="header-account">
-			<h1 class="page-title">Liste des comptes de ${client.firstname}
-				${client.lastname}</h1>
-			<div class="transfer-button"></div>
-		</div>
 
-	</section>
 
 	<!-- Footer -->
-	<h1>Bienvenue sur votre tableau de bord</h1>
-				<a href="transfer.html?id=${client.id}">
-					<button class="button">Virement</button>
-				</a>
-	<div>
-		<label for="comptes">Liste des comptes de ${client.firstname}
-			${client.lastname}</label> <select id="comptes" name="comptes">
-			<option value="">----</option>
-			<c:forEach var="account" items="${accountList}">
-				<option id="${account.id}" value="${account.label}">${account.balance}
-					${account.label} ${account.openningDate}</option>
-			</c:forEach>
-		</select>
-		<div id="stockinfo"></div>
-	</div>
-=======
+
+
 		<section class="account-body">
 			<div class="header-account">
 				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
@@ -123,7 +101,7 @@
 		</section>
 		
 		<!-- Footer -->
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
+
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -139,10 +117,6 @@
 			</div>
 		</div>
 	</footer>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 5cd9aeb4791d00bccbe46e2d977f45527e5c5031
 </body>
 </html>

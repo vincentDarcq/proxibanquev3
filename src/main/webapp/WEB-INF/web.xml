@@ -28,7 +28,7 @@
 	
 	<servlet>
 		<servlet-name>TransferServlet</servlet-name>
-		<servlet-class>presentation.ClientServlet</servlet-class>
+		<servlet-class>presentation.TransferServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
