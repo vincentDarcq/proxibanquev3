@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import metier.Client;
 import service.AccountService;
+import service.ClientService;
 
 /**
  * Classe qui gère la page web d'ajout d'une carte bancaire.

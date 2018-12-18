@@ -10,12 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import metier.Client;
 import service.ClientService;
 
-/**
- * Classe qui gère la page web principale.
- * 
- * @author Adminl
- *
- */
 public class IndexServlet extends HttpServlet {
 
 	/**
