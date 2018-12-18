@@ -9,6 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Classe représentant une carte bancaire. Elle prend en paramètres une id, une
+ * date d'expiration, un numéro de carte et un type.
+ * 
+ * @author Adminl
+ *
+ */
 @Entity
 @Table
 public class Card {
@@ -17,19 +24,28 @@ public class Card {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer id;
-	
+
 	@Column
 	private LocalDate expirationDate;
-	
+
 	@Column
 	private String cardNumber;
-	
-	@Column
-	private String type;	
 
+	@Column
+	private String type;
+
+	/**
+	 * Constructeur d'initilisation par défaut.
+	 */
 	public Card() {
 	}
 
+	/**Constructeur d'initialisation avec attributs.
+	 * @param id
+	 * @param expirationDate
+	 * @param cardNumber
+	 * @param type
+	 */
 	public Card(Integer id, LocalDate expirationDate, String cardNumber, String type) {
 		this.id = id;
 		this.expirationDate = expirationDate;
@@ -68,6 +84,5 @@ public class Card {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
+
 }

@@ -11,7 +11,13 @@ import metier.Card;
 import service.AccountService;
 import service.CardService;
 
-public class CreateCheckServlet extends HttpServlet{
+/**
+ * Classe qui gère la page web d'ajout d'un chéquier.
+ * 
+ * @author Adminl
+ *
+ */
+public class CreateCheckServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -40,5 +46,3 @@ public class CreateCheckServlet extends HttpServlet{
 
 	}
 }
-
-

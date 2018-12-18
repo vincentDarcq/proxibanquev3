@@ -1,8 +1,13 @@
 package service;
 
-import metier.Cheque;
 import persistence.ChequeDao;
 
+/**
+ * Classe gérant les services liés au chéquier.
+ * 
+ * @author Adminl
+ *
+ */
 public class ChequeService {
 
 	private static final ChequeService INSTANCE = new ChequeService();
@@ -19,10 +24,6 @@ public class ChequeService {
 
 	public ChequeService() {
 		this.daoCheck = ChequeDao.getInstance();
-	}
-
-	public Cheque getType(Integer id) {
-		return this.daoCheck.read(id);
 	}
 
 }
