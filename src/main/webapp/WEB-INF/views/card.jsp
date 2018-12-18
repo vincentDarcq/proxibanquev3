@@ -34,7 +34,15 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
+
+
 	<section class="head"></section>
+	
+	<div class="footer-button" style="margin-left:1700px">
+				<a href="index.html">
+					<button class="button">Se Déconnecter</button>
+				</a>
+			</div>
 	<h1 class="page-title">Commander une carte</h1>
 
 

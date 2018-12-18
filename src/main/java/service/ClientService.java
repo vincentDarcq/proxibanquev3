@@ -48,7 +48,7 @@ public class ClientService {
 			Account compteDebite = this.daoAccount.read(debitId);
 			if(cash > 300) {
 				withDrawOK = false;
-			}else if(compteDebite.getBalance() + cash <0) {
+			}else if(compteDebite.getBalance() - cash <0) {
 				withDrawOK = false;
 			}else {
 				compteDebite.setBalance(compteDebite.getBalance() - cash);

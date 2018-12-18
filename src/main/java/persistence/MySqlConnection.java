@@ -7,20 +7,42 @@ import javax.persistence.Persistence;
 
 public class MySqlConnection {
 
-private static final MySqlConnection INSTANCE = new MySqlConnection();
-	
+	/**
+	 * Déclaration d'un singleton (instance unique) privé.
+	 */
+	private static final MySqlConnection INSTANCE = new MySqlConnection();
+
+	/**
+	 * @return MysqlConnection l'instance unique (singleton) de connexion BDD.
+	 */
 	public static MySqlConnection getInstance() {
 		return MySqlConnection.INSTANCE;
 	}
-	
-	private EntityManagerFactory EMF;
-	
+
+	/**
+	 * Il est nécessaire de mémoriser quelque part l'instance unique de
+	 * EntityManagerFactory.
+	 */
+	private EntityManagerFactory entityManagerFactory;
+	private EntityManager entityManager;
+
+	/**
+	 * Constructeur par défaut. Récupère l'instance d'EntityManagerFactory
+	 * associée à notre unité de persistence 'blog' définie dans
+	 * persistence.xml.
+	 */
 	public MySqlConnection() {
-		this.EMF = Persistence.createEntityManagerFactory("proxibanquev3");
+		this.entityManagerFactory = Persistence
+				.createEntityManagerFactory("proxibanquev3");
+		this.entityManager = this.entityManagerFactory.createEntityManager();
 	}
 
+	/**
+	 * @return EntityManager une instance capable d'effectuer les opérations
+	 *         CRUD sur la base de données.
+	 */
 	public EntityManager getEntityManager() {
-		return this.EMF.createEntityManager();
+		return this.entityManager;
 	}
 	
 }

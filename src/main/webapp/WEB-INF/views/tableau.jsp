@@ -80,17 +80,17 @@
 								<td>
 								<div class="button-container">   
 							<div>
-								<a href="Card.html?id=${currentAccount.id}">
+								<a href="Card.html?id=${client.id}&accountId=${currentAccount.id}">
 									<button class="button">Commander une carte</button>
 								</a>
 							</div>
 							<div>
-								<a href="Cheque.html?id=${currentAccount.id}">
-									<button class="button">Commander un cheque</button>
+								<a href="Cheque.html?id=${client.id}">
+									<button class="button">Commander un chequier</button>
 								</a>
 							</div>
 							<div>
-								<a href="withdrawal.html?id=${currentAccount.id}">
+								<a href="withdrawal.html?id=${client.id}&accountId=${currentAccount.id}">
 									<button class="button">Faire un retrait</button>
 								</a>
 							</div>
@@ -112,17 +112,23 @@
 						<tr>
 							<th>Numero de compte</th>
 							<th class="balance">Solde en &#8364</th>
+							<th class="action">Actions</th>
 						</tr>
 						<c:forEach var="savingAccount" items="${savingAccounts }">
 							<tr class="data">
 								<td>${savingAccount.number}</td>
 								<td class="balance">${savingAccount.balance}</td>
-							</tr>
-							<div class="button-container">
-							
+								
+								<td>
+								<div class="button-container">   
 							<div>
-								<a href="Cheque.html?id=${savingAccount.id}">
-									<button class="button">Commander un cheque</button>
+								<a href="Card.html?id=${savingAccount.id}">
+									<button class="button">Commander une carte</button>
+								</a>
+							</div>
+							<div>
+								<a href="Cheque.html?id=${client.id}">
+									<button class="button">Commander un chequier</button>
 								</a>
 							</div>
 							<div>
@@ -131,6 +137,10 @@
 								</a>
 							</div>
 						</div>
+								</td>
+								
+							</tr>
+							
 						</c:forEach>
 					</table>
 

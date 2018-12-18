@@ -37,7 +37,7 @@
     <h1 class="page-title">La carte a bien été créée. Vous pouvez revenir sur la page d'accueil.</h1>
 
     <div class="transfer-button">
-        <a href="tableau.html?id=${clientId}">
+        <a href="tableau.html">
             <button class="button">Retour à l'accueil</button>
         </a>
     </div>
