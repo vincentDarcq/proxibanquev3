@@ -98,33 +98,7 @@
 					<h4>Aucun compte associé à ce client.</h4>
 				</c:if>
 				<c:if test="${not empty currentAccounts}">
-				<!-- 
-					<c:forEach var="CurrentAccount" items="${currentAccounts}">
-						<p class="name">Numéro XXX de compte : ${currentAccount.number}</p>
-						<p class="text">Solde de compte : ${currentAccount.balance}</p>
-						<p class="text">Date d'ouverture du compte :
-							${currentAccount.openningDate}</p>
-						<p class="text">Label du compte : ${currentAccount.label}</p>
-						<div class="button-container">
-							<div>
-								<a href="Card.html?id=${currentAccount.id}">
-									<button class="button">Commander une carte</button>
-								</a>
-							</div>
-							<div>
-								<a href="Cheque.html?id=${currentAccount.id}">
-									<button class="button">Commander un cheque</button>
-								</a>
-							</div>
-							<div>
-								<a href="withdrawal.html?id=${currentAccount.id}">
-									<button class="button">Faire un retrait</button>
-								</a>
-							</div>
-						</div>
-					</c:forEach>
-					
-					-->
+				
 					
 					<table>
 						<tr>
@@ -136,9 +110,7 @@
 								<td>${currentAccount.number}</td>
 								<td class="balance">${currentAccount.balance}</td>
 							</tr>
-							
-						</c:forEach>
-						<div class="button-container">
+							<div class="button-container">
 							<div>
 								<a href="Card.html?id=${currentAccount.id}">
 									<button class="button">Commander une carte</button>
@@ -155,6 +127,8 @@
 								</a>
 							</div>
 						</div>
+						</c:forEach>
+						
 					</table>
 				</c:if>
 			</div>
@@ -174,6 +148,23 @@
 								<td>${savingAccount.number}</td>
 								<td class="balance">${savingAccount.balance}</td>
 							</tr>
+							<div class="button-container">
+							<div>
+								<a href="Card.html?id=${savingAccount.id}">
+									<button class="button">Commander une carte</button>
+								</a>
+							</div>
+							<div>
+								<a href="Cheque.html?id=${savingAccount.id}">
+									<button class="button">Commander un cheque</button>
+								</a>
+							</div>
+							<div>
+								<a href="withdrawal.html?id=${savingAccount.id}">
+									<button class="button">Faire un retrait</button>
+								</a>
+							</div>
+						</div>
 						</c:forEach>
 					</table>
 

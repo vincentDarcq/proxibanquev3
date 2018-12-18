@@ -20,7 +20,7 @@ public class AccountService {
 
 	private AccountDao daoAccount;
 	private ClientDao clientDao;
-	private CardDao CardDao;
+	private CardDao cardDao;
 	private ChequeDao CheckDao;
 
 
@@ -36,7 +36,7 @@ public class AccountService {
 	public AccountService() {
 		this.daoAccount = AccountDao.getInstance();
 		this.clientDao = ClientDao.getInstance();
-	}
+		this.cardDao = CardDao.getInstance();	}
 
 	/**
 	 * Recup�re la liste de tous les Accounts suivis par le conseiller.
@@ -115,9 +115,10 @@ public class AccountService {
 			// On prepare la nouvelle carte.
 			Card newCard = new Card();
 			newCard.setExpirationDate(LocalDate.now().plusMonths(3));
+			System.out.println("voici le type: " + type);
 			newCard.setType(type);
 			// On créé la carte en BDD pour avoir un id généré.
-			newCard = this.CardDao.create(newCard);
+			newCard = this.cardDao.create(newCard);
 			// On lie la nouvelle carte au compte.
 			account.setCard(newCard);
 			// On met à jour le compte avec le lien vers la nouvelle carte.

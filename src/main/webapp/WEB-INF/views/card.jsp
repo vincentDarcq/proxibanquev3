@@ -44,19 +44,33 @@
 
 	<form method="post" action="">
 		<div class="centered-input">
-			<div>
+		<label for="choco">Type de carte</label>
+			<select class="menu" id="card"  name="card">
+				<option label="Visa electron" value="electron" />
+				<option label="Visa premier" value="premier" />
+				<!--<c:forEach var="cardType" items="${cardTypes}">
+					<option class="cardOption" id="${cardType.id}" label="${cardType.label}" value="${cardType.value}" />
+				</c:forEach>  -->
+			</select>
+			<div id ="stockinfo"></div>
+		
+			<button id ="button">Commander</button>
+			<!-- <div>
 				<label for="type" class="text"> Type de carte : </label> <input
 					type="number" step=0.1 name="value" id="value"
 					style="margin-left: 0.5em;">
 				<button style="margin-left: 2em;" class="button">Confirmer</button>
 			</div>
 		</div>
+	
+		-->
+		</div>
 	</form>
 
 
 	<div class="footer-button">
-		<a href="/proxibanquev3/client.html?id=${client.id}">
-			<button class="button">Retour à l'accueil</button>
+		<a href="/proxibanquev3/tableau.html?id=${client.id}">
+			<button class="button">Retour au tableau de bord</button>
 		</a>
 	</div>
 
