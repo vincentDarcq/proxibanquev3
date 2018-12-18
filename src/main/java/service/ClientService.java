@@ -74,6 +74,7 @@ public class ClientService {
 	 * @return
 	 */
 	public boolean withDraw(float cash, Integer debitId) {
+<<<<<<< HEAD
 		boolean withDrawOK = true;
 		Account compteDebite = this.daoAccount.read(debitId);
 		if (cash > 300) {
@@ -83,6 +84,19 @@ public class ClientService {
 		} else {
 			compteDebite.setBalance(compteDebite.getBalance() - cash);
 			this.daoAccount.update(compteDebite);
+=======
+			boolean withDrawOK = true;
+			Account compteDebite = this.daoAccount.read(debitId);
+			if(cash > 300) {
+				withDrawOK = false;
+			}else if(compteDebite.getBalance() - cash <0) {
+				withDrawOK = false;
+			}else {
+				compteDebite.setBalance(compteDebite.getBalance() - cash);
+				this.daoAccount.update(compteDebite);
+			}
+			return withDrawOK;
+>>>>>>> 88ad1de5a2f0e6005891f96e327cd5c6083ad159
 		}
 		return withDrawOK;
 	}

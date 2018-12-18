@@ -54,7 +54,7 @@
 
 
 	<div class="footer-button">
-		<a href="/proxibanquev3/client.html?id=${client.id}">
+		<a href="index.html">
 			<button class="button">Retour à l'accueil</button>
 		</a>
 	</div>

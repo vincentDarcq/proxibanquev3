@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Outil de virement</title>
+<title>Transfert effectue</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,29 +33,22 @@
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
 </head>
-
 <body>
 
+
 	<section class="head"></section>
-<div class="footer-button" style="margin-left:1000px">
-				<a href="index.html">
-					<button class="button">Retour Ã  la page d'accueil</button>
-				</a>
-			</div>
+<body>
 
-<body id="page-top">
-
-
-
-<h1>Erreur</h1>
-
-<p>Il semble qu'il y ait ey une erreur<br>
-	Si le problÃ¨me persiste, merci de bien vouloir contacter votre conseiller.
-</p>
-
-
+	<h1>Désolé</h1>
+	<p>Cette option n'est pas disponible pour le moment<br>
+	Nous espérons pouvoir la mettre en place lors du projet V4</p>
+	
 
 </body>
 
-
+<div class="footer-button" style="margin-left:1000px">
+				<a href="index.html">
+					<button class="button">Retour à la page d'accueil</button>
+				</a>
+			</div>
 </html>
