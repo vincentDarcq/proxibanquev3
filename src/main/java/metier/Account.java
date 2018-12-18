@@ -8,12 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-<<<<<<< HEAD
 
-=======
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 import javax.persistence.Table;
 
 @Entity
@@ -30,20 +28,6 @@ public class Account {
 	@Column
 	private Float balance;
 
-<<<<<<< HEAD
-
-	//private String label;
-	private String number;
-	
-
-
-
-	@Column
-	private String openningDate;
-	
-	//@Column
-	//private Card card;
-=======
 	@Column
 	private String number;
 
@@ -53,7 +37,7 @@ public class Account {
 	@OneToOne
 	@JoinColumn(name = "card_id", referencedColumnName = "id")
 	private Card card;
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 
 	@OneToOne
 	@JoinColumn(name = "check_id", referencedColumnName = "id")
@@ -62,7 +46,7 @@ public class Account {
 	public Account() {
 	}
 
-<<<<<<< HEAD
+
 
 
 
@@ -77,11 +61,11 @@ public class Account {
 	
 	
 
-	public Account(Integer id, Float balance, String label, String number, String openningDate) {
-=======
+	//public Account(Integer id, Float balance, String label, String number, String openningDate) {
+
 	public Account(Integer id, Float balance, String number, String openningDate, Cheque cheque, Card card) {
 
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 		this.id = id;
 		this.balance = balance;
 		this.number = number;
@@ -115,10 +99,7 @@ public class Account {
 		this.openningDate = openningDate;
 	}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
 	public String getNumber() {
 		return number;
 	}
@@ -127,10 +108,7 @@ public class Account {
 		this.number = number;
 	}
 
-<<<<<<< HEAD
-/**
-=======
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 	public Card getCard() {
 		return card;
 	}
@@ -147,10 +125,5 @@ public class Account {
 		this.check = check;
 	}
 	
-<<<<<<< HEAD
-**/
-=======
-	
 
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
 }

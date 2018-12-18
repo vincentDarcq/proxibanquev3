@@ -27,6 +27,12 @@ public class ChequeDao extends AbstractDao<Cheque>{
 	public Cheque create(Cheque entity) {
 		return super.create(entity);
 	}
+
+	@Override
+	public Cheque read(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

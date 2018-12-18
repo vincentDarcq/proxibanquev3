@@ -24,7 +24,7 @@ public class CardServlet extends HttpServlet{
 
 		//Integer id = Integer.parseInt(req.getParameter("id"));
 		//Client client = ClientService.getInstance().read(id);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/views/card.jsp").forward(req, resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Card.jsp").forward(req, resp);
 		//resp.sendRedirect(this.getServletContext().getContextPath() + "/WEB-INF/views/card.html?id=" + client.getId());
 	}
 	

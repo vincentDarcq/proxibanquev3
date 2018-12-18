@@ -27,6 +27,12 @@ public class AccountDao extends AbstractDao<Account> {
 	public Account create(Account entity) {
 		return super.create(entity);
 	}
+
+	@Override
+	public Account read(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 		
 }

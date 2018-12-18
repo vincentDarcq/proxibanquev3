@@ -12,12 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import metier.Account;
 import metier.Client;
-<<<<<<< HEAD
-=======
 import service.AccountService;
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
-
-
 import service.ClientService;
 
 public class ClientServlet extends HttpServlet{
@@ -30,10 +25,7 @@ public class ClientServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		Integer id = Integer.parseInt(req.getParameter("id"));
-<<<<<<< HEAD
 
-=======
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
 		List<Account> accounts = ClientService.getInstance().read(id).getAccounts();
 		Client client = ClientService.getInstance().read(id);
 		req.setAttribute("accountList", accounts);

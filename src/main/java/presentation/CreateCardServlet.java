@@ -21,10 +21,10 @@ public class CreateCardServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		Cheque check = ChequeService.getInstance().getType(id);
-		req.setAttribute("check", check);
-		this.getServletContext().getRequestDispatcher("").forward(req, resp);
+		//Integer id = Integer.parseInt(req.getParameter("id"));
+		//Cheque check = ChequeService.getInstance().getType(id);
+		//req.setAttribute("check", check);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/card.jsp").forward(req, resp);
 
 	}
 

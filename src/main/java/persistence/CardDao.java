@@ -27,6 +27,12 @@ public class CardDao extends AbstractDao<Card> {
 	public Card create(Card entity) {
 		return super.create(entity);
 	}
+
+	@Override
+	public Card read(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

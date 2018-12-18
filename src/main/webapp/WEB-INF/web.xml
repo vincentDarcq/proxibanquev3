@@ -35,7 +35,7 @@
 		<servlet-name>TransferServlet</servlet-name>
 		<url-pattern>/transfer.html</url-pattern>
 	</servlet-mapping>
-<<<<<<< HEAD
+
 	
 	<servlet>
 		<servlet-name>CardServlet</servlet-name>
@@ -44,25 +44,8 @@
 	
 	<servlet-mapping>
 		<servlet-name>CardServlet</servlet-name>
-		<url-pattern>/card.html</url-pattern>
-=======
-	<servlet>
-		<servlet-name>CreateCardServlet</servlet-name>
-		<servlet-class>presentation.CreateCardServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>CreateCardServlet</servlet-name>
-		<url-pattern>/createCard.html</url-pattern>
+		<url-pattern>/Card.html</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>CreateCheckServlet</servlet-name>
-		<servlet-class>presentation.CreateCheckServlet</servlet-class>
-	</servlet>
 	
-	<servlet-mapping>
-		<servlet-name>CreateCheckServlet</servlet-name>
-		<url-pattern>/CreateCheck.html</url-pattern>
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
-	</servlet-mapping>
+
 </web-app>

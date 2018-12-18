@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Accueil</title>
+<title>Outil de virement</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,49 +32,33 @@
 <!-- Custom styles for this template -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
-
 </head>
-<<<<<<< HEAD
-
 <body id="page-top">
 
 	<!-- Header -->
 	
-	<header class="masthead">
-	
-		<div class="container">
-			<div class="intro-text"
-				style="padding-top: 150px;">
-				<div class="intro-lead-in">Bienvenue sur le système
-					d'information</div>
-				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
-			</div>
-		</div>
-		
-	</header>
 	<div class="footer-button" style="margin-left:1700px">
 				<a href="index.html">
 					<button class="button">Se Déconnecter</button>
 				</a>
 			</div>
-=======
+
 <body>
 	<section class="head"></section>
 
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 	<section class="account-body">
 		<c:if test="${not empty transferRate}">
 			<h1 class="page-title">Erreur : Le compte à debiter aura un
 				solde negatif avec le montant renseigné</h1>
 		</c:if>
-<<<<<<< HEAD
+
 		<c:if test="${value>900}">
 			<h1 class="page-title">Erreur : Le montant du virement ne peut pas excéder 900€</h1>
 		</c:if>
 	
-=======
 
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 		<c:if test="${fn:length(accounts) > 1}">
 			<h1 class="page-title">Transfert pour ${client.firstname}
 				${client.lastname }</h1>
@@ -128,11 +112,11 @@
 		</c:if>
 		<div class="footer-button">
 			<a href="tableau.html?id=${clientId}">
-<<<<<<< HEAD
+
 				<button class="button">Retour au tableau de bord</button>
-=======
+
 				<button class="button">Retour à l'accueil</button>
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 			</a>
 		</div>
 	</section>

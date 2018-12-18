@@ -15,22 +15,16 @@ import service.ClientService;
 
 public class TransferServlet extends HttpServlet {
 
-<<<<<<< HEAD
-public class TransferServlet extends HttpServlet{
 
 
-=======
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
+
 	private static final long serialVersionUID = 1L;
 	private AccountService accS = AccountService.getInstance();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<<<<<<< HEAD
-		//super.doGet(req, resp);
-=======
-		// super.doGet(req, resp);
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Client client = ClientService.getInstance().read(id);
@@ -49,7 +43,7 @@ public class TransferServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<<<<<<< HEAD
+
 		 Integer compteCredite = Integer.parseInt(req.getParameter("compteACrediter"));
 	        Integer compteDebite = Integer.parseInt(req.getParameter("compteADebiter"));
 	        Integer clientId = Integer.parseInt(req.getParameter("id"));
@@ -71,23 +65,3 @@ public class TransferServlet extends HttpServlet{
 
 }
 
-=======
-		Integer compteCredite = Integer.parseInt(req.getParameter("compteACrediter"));
-		Integer compteDebite = Integer.parseInt(req.getParameter("compteADebiter"));
-		Integer clientId = Integer.parseInt(req.getParameter("id"));
-		Float val = Float.parseFloat(req.getParameter("value"));
-
-		Boolean transferOK = ClientService.getInstance().transfer(val, compteDebite, compteCredite, clientId);
-
-		if (!transferOK) {
-			req.setAttribute("transferRate", transferOK);
-			req.setAttribute("clientId", clientId);
-			this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer.jsp").forward(req, resp);
-		} else {
-			req.setAttribute("clientId", clientId);
-			this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer_OK.jsp").forward(req, resp);
-		}
-	}
-
-}
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7

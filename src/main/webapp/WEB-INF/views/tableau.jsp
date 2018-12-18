@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Accueil</title>
+<title>Outil de virement</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,43 +32,25 @@
 <!-- Custom styles for this template -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
-
 </head>
-<<<<<<< HEAD
-=======
+
 <body>
 
 	<section class="head"></section>
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 
 <body id="page-top">
 
-	<!-- Header -->
-	
-	<header class="masthead">
-	
-		<div class="container">
-			<div class="intro-text"
-				style="padding-top: 150px;">
-				<div class="intro-lead-in">Bienvenue sur le système
-					d'information</div>
-				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
-			</div>
-		</div>
-		
-	</header>
-	<!-- Footer -->
 
-<<<<<<< HEAD
 	<div class="footer-button" style="margin-left:1700px">
 				<a href="index.html">
-					<button class="button">Se Déconnecter</button>
+					<button class="button">Se DÃ©connecter</button>
 				</a>
 			</div>
 		<section class="account-body">
 			<div class="header-account">
 				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
-				<div style="text-align:center;display:inline;margin:50px">
+	<!--			<div style="text-align:center;display:inline;margin:50px">
 				<div class="transfer-button">
 					<a href="transfer.html?id=${id}">
 						<button class="button">Faire un virement</button>
@@ -88,11 +70,11 @@
 					</a>
 				</div>
 				</div>
-			</div>
+			</div>  
 			<div class="account-list">
 				<div class="left-list">
 				<h2>Liste des comptes courant </h2>
-=======
+
 
 	<section class="account-body">
 		<div class="header-account">
@@ -100,26 +82,30 @@
 				${client.lastname }</h1>
 
 		</div>
-		<div class="account-list">
-			<div class="left-list">
-				<h2>Liste des comptes courant</h2>
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
-				<c:if test="${empty currentAccounts}">
-					<h4>Aucun compte associé à ce client.</h4>
-				</c:if>
-				<c:if test="${not empty currentAccounts}">
-					<c:forEach var="CurrentAccount" items="${currentAccounts}">
-						<p class="name">Numéro de compte : ${currentAccount.number}</p>
-						<p class="text">Solde de compte : ${currentAccount.balance}</p>
-						<p class="text">Date d'ouverture du compte :
-							${currentAccount.openningDate}</p>
-						<p class="text">Label du compte : ${currentAccount.label}</p>
-						<div class="button-container">
+		
+		-->
 							<div>
 								<a href="transfer.html?id=${id}">
 									<button class="button">Faire un virement</button>
 								</a>
 							</div>
+		
+		<div class="account-list">
+			<div class="left-list">
+				<h2>Liste des comptes courant</h2>
+
+				<c:if test="${empty currentAccounts}">
+					<h4>Aucun compte associÃ© Ã  ce client.</h4>
+				</c:if>
+				<c:if test="${not empty currentAccounts}">
+				<!-- 
+					<c:forEach var="CurrentAccount" items="${currentAccounts}">
+						<p class="name">NumÃ©ro XXX de compte : ${currentAccount.number}</p>
+						<p class="text">Solde de compte : ${currentAccount.balance}</p>
+						<p class="text">Date d'ouverture du compte :
+							${currentAccount.openningDate}</p>
+						<p class="text">Label du compte : ${currentAccount.label}</p>
+						<div class="button-container">
 							<div>
 								<a href="Card.html?id=${currentAccount.id}">
 									<button class="button">Commander une carte</button>
@@ -137,6 +123,9 @@
 							</div>
 						</div>
 					</c:forEach>
+					
+					-->
+					
 					<table>
 						<tr>
 							<th>Numero de compte</th>
@@ -147,14 +136,32 @@
 								<td>${currentAccount.number}</td>
 								<td class="balance">${currentAccount.balance}</td>
 							</tr>
+							
 						</c:forEach>
+						<div class="button-container">
+							<div>
+								<a href="Card.html?id=${currentAccount.id}">
+									<button class="button">Commander une carte</button>
+								</a>
+							</div>
+							<div>
+								<a href="Cheque.html?id=${currentAccount.id}">
+									<button class="button">Commander un cheque</button>
+								</a>
+							</div>
+							<div>
+								<a href="withdrawal.html?id=${currentAccount.id}">
+									<button class="button">Faire un retrait</button>
+								</a>
+							</div>
+						</div>
 					</table>
 				</c:if>
 			</div>
 			<div class="right-list">
 				<h2>Liste des comptes epargne</h2>
 				<c:if test="${empty savingAccounts}">
-					<h4>Aucun compte associé à ce client.</h4>
+					<h4>Aucun compte associÃ© Ã  ce client.</h4>
 				</c:if>
 				<c:if test="${not empty savingAccounts}">
 					<table>
@@ -169,7 +176,7 @@
 							</tr>
 						</c:forEach>
 					</table>
-<<<<<<< HEAD
+
 					</c:if>
 				</div>
 			</div>
@@ -177,19 +184,19 @@
 		</section>
 		
 		<!-- Footer -->
-=======
-				</c:if>
+
+			
 			</div>
 		</div>
 		<div class="footer-button">
 			<a href="index.html">
-				<button class="button">Retour à l'accueil</button>
+				<button class="button">Retour Ã  l'accueil</button>
 			</a>
 		</div>
 	</section>
 
 	<!-- Footer -->
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 
 	<footer>
 		<div class="container">

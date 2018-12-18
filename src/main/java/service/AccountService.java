@@ -17,19 +17,12 @@ import persistence.ChequeDao;
 public class AccountService {
 
 	private static final AccountService INSTANCE = new AccountService();
-<<<<<<< HEAD
-	private  AccountDao daoAccount;
 
-	private ClientDao clientDao;
-	private CardDao CardDao;
-
-
-=======
 	private AccountDao daoAccount;
 	private ClientDao clientDao;
 	private CardDao CardDao;
 	private ChequeDao CheckDao;
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 
 	/**
 	 * Retourne le singleton de la classe.
@@ -56,10 +49,7 @@ public class AccountService {
 		return accounts;
 
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 
 	public Account read(Integer id) {
 		return this.daoAccount.read(id);
@@ -102,11 +92,8 @@ public class AccountService {
 	public AccountDao getDao() {
 		return this.daoAccount;
 	}
-<<<<<<< HEAD
-	/**
-=======
 
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 	public boolean linkNewCard(Integer accountId, String type) {
 		boolean resultOk = true;
 		Account account = this.daoAccount.read(accountId);
@@ -138,9 +125,9 @@ public class AccountService {
 		}
 		return resultOk;
 	}
-<<<<<<< HEAD
-	**/
-=======
+
+
+
 
 	public boolean linkNewCheck(Integer accountId, String type) {
 		boolean resultOk = true;
@@ -162,5 +149,5 @@ public class AccountService {
 		}
 		return resultOk;
 	}
->>>>>>> 4f275f2d613b1f913bd07a0038126198588705e7
+
 }
