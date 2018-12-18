@@ -1,17 +1,23 @@
 package service;
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 import metier.Account;
 import metier.Client;
 import persistence.AccountDao;
 import persistence.ClientDao;
 
-
 public class ClientService {
 
 	private static final ClientService INSTANCE = new ClientService();
+<<<<<<< HEAD
+	private ClientDao daoClient;
+=======
 	
 	private  ClientDao daoClient;
+>>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 	private AccountDao daoAccount;
 
 	/**
@@ -27,14 +33,31 @@ public class ClientService {
 		this.daoClient = ClientDao.getInstance();
 	}
 
-	
 	public Client read(Integer id) {
 		return this.daoClient.read(id);
 	}
-	
+
 	public Client read(String lastname, String firstname) {
 		return this.daoClient.read(lastname, firstname);
 	}
+<<<<<<< HEAD
+
+
+	public boolean withDraw(float cash, Integer debitId) {
+			boolean withDrawOK = true;
+			Account compteDebite = this.daoAccount.read(debitId);
+			if(cash > 300) {
+				withDrawOK = false;
+			}else if(compteDebite.getBalance() + cash <0) {
+				withDrawOK = false;
+			}else {
+				compteDebite.setBalance(compteDebite.getBalance() + cash);
+				this.daoAccount.update(compteDebite);
+			}
+			return withDrawOK;
+		}
+}
+=======
 	
 	public boolean transfer(Float value, Integer debitId, Integer creditId, Integer clientId) {
 		boolean transferOK = true;
@@ -59,4 +82,5 @@ public class ClientService {
 
 	
 	}
+>>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 

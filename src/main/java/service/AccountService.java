@@ -1,20 +1,29 @@
 package service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import metier.Account;
+import metier.Card;
 import metier.CurrentAccount;
 import metier.SavingAccount;
 import persistence.AccountDao;
 import persistence.ClientDao;
+import persistence.CardDao;
 
 public class AccountService {
 	
 	private static final AccountService INSTANCE = new AccountService();
 	private  AccountDao daoAccount;
+<<<<<<< HEAD
+	private ClientDao clientDao;
+	private CardDao CardDao;
+
+=======
 
 	private ClientDao clientDao;
+>>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 
 	/**
 	 * Retourne le singleton de la classe.
@@ -27,7 +36,8 @@ public class AccountService {
 
 	public AccountService() {
 		this.daoAccount = AccountDao.getInstance();
-		this.clientDao = clientDao.getInstance();	}
+		this.clientDao = clientDao.getInstance();	
+		}
 
 	/**
 	 * Recup�re la liste de tous les Accounts suivis par le conseiller.
@@ -41,9 +51,12 @@ public class AccountService {
 
 	}
 	
+<<<<<<< HEAD
+=======
 
 	
 	
+>>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 	public Account read(Integer id) {
 		return this.daoAccount.read(id);
 	}
@@ -85,6 +98,36 @@ public class AccountService {
 	public AccountDao getDao() {
 		return this.daoAccount;
 	}
-
 	
-}	
+	public boolean linkNewCard(Integer accountId, String type) {
+		boolean resultOk = true;
+		Account account = this.daoAccount.read(accountId);
+		// Si le compte avait déjà une carte et qu'elle a expirée.
+		if (account.getCard() != null) {
+			// On vérifie que la date d'expiration est bien dépassée.
+			if (account.getCard().getExpirationDate().isBefore(LocalDate.now())) {
+				// Retirer le lien entre l'ancienne carte et le compte.
+				account.setCard(null);
+				// Mettre à jour le compte pour que le lien n'existe plus en BDD.
+				this.daoAccount.update(account);				
+			} else {
+				// Sinon on indique qu'il ne faut pas créer de carte.
+				resultOk = false;
+			}
+		}
+		// Si il est possible d'ajouter une carte.
+		if (resultOk) {
+			// On prepare la nouvelle carte.
+			Card newCard = new Card();
+			newCard.setExpirationDate(LocalDate.now().plusMonths(3));
+			newCard.setType(type);
+			// On créé la carte en BDD pour avoir un id généré.
+			newCard = this.CardDao.create(newCard);
+			// On lie la nouvelle carte au compte.
+			account.setCard(newCard);
+			// On met à jour le compte avec le lien vers la nouvelle carte.
+			this.daoAccount.update(account);
+		}
+		return resultOk;
+	}
+}

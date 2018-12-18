@@ -27,5 +27,6 @@ public class AccountDao extends AbstractDao<Account> {
 	public Account create(Account entity) {
 		return super.create(entity);
 	}
-
+	
+		
 }
