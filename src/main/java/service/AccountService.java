@@ -6,24 +6,21 @@ import java.util.List;
 
 import metier.Account;
 import metier.Card;
+import metier.Cheque;
 import metier.CurrentAccount;
 import metier.SavingAccount;
 import persistence.AccountDao;
 import persistence.ClientDao;
 import persistence.CardDao;
+import persistence.ChequeDao;
 
 public class AccountService {
-	
+
 	private static final AccountService INSTANCE = new AccountService();
-	private  AccountDao daoAccount;
-<<<<<<< HEAD
+	private AccountDao daoAccount;
 	private ClientDao clientDao;
 	private CardDao CardDao;
-
-=======
-
-	private ClientDao clientDao;
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
+	private ChequeDao CheckDao;
 
 	/**
 	 * Retourne le singleton de la classe.
@@ -36,8 +33,8 @@ public class AccountService {
 
 	public AccountService() {
 		this.daoAccount = AccountDao.getInstance();
-		this.clientDao = clientDao.getInstance();	
-		}
+		this.clientDao = ClientDao.getInstance();
+	}
 
 	/**
 	 * Recup�re la liste de tous les Accounts suivis par le conseiller.
@@ -50,17 +47,11 @@ public class AccountService {
 		return accounts;
 
 	}
-	
-<<<<<<< HEAD
-=======
 
-	
-	
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 	public Account read(Integer id) {
 		return this.daoAccount.read(id);
 	}
-	
+
 	public List<Account> getAllSavingAccounts(Integer idClient) {
 		List<Account> SavingAccounts = new ArrayList<>();
 
@@ -94,11 +85,11 @@ public class AccountService {
 		}
 		return CurrentAccounts;
 	}
-	
+
 	public AccountDao getDao() {
 		return this.daoAccount;
 	}
-	
+
 	public boolean linkNewCard(Integer accountId, String type) {
 		boolean resultOk = true;
 		Account account = this.daoAccount.read(accountId);
@@ -109,7 +100,7 @@ public class AccountService {
 				// Retirer le lien entre l'ancienne carte et le compte.
 				account.setCard(null);
 				// Mettre à jour le compte pour que le lien n'existe plus en BDD.
-				this.daoAccount.update(account);				
+				this.daoAccount.update(account);
 			} else {
 				// Sinon on indique qu'il ne faut pas créer de carte.
 				resultOk = false;
@@ -126,6 +117,27 @@ public class AccountService {
 			// On lie la nouvelle carte au compte.
 			account.setCard(newCard);
 			// On met à jour le compte avec le lien vers la nouvelle carte.
+			this.daoAccount.update(account);
+		}
+		return resultOk;
+	}
+
+	public boolean linkNewCheck(Integer accountId, String type) {
+		boolean resultOk = true;
+		Account account = this.daoAccount.read(accountId);
+		if (account.getCheck() != null) {
+			if (account.getCheck().getReceptionDate().isBefore(LocalDate.now())) {
+				account.setCheck(null);
+				this.daoAccount.update(account);
+			} else {
+				resultOk = false;
+			}
+		}
+		if (resultOk) {
+			Cheque newCheck = new Cheque();
+			newCheck.setReceptionDate(LocalDate.now().plusMonths(3));
+			newCheck = this.CheckDao.create(newCheck);
+			account.setCheck(newCheck);
 			this.daoAccount.update(account);
 		}
 		return resultOk;

@@ -6,11 +6,14 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import metier.Card;
-import metier.Client;
 
 public class CardDao extends AbstractDao<Card> {
 
-	private static final ClientDao INSTANCE = new ClientDao();
+	private static final CardDao INSTANCE = new CardDao();
+	
+	public static CardDao getInstance() {
+		return CardDao.INSTANCE;
+	}
 
 	@Override
 	public List<Card> readAll() {
@@ -22,7 +25,6 @@ public class CardDao extends AbstractDao<Card> {
 
 	@Override
 	public Card create(Card entity) {
-		// TODO Auto-generated method stub
 		return super.create(entity);
 	}
 	

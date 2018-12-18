@@ -6,19 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-<<<<<<< HEAD
-=======
-
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="account")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="savings")
+@Table(name = "account")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "savings")
 public class Account {
 
 	@Id
@@ -30,34 +27,24 @@ public class Account {
 	private Float balance;
 
 	@Column
-<<<<<<< HEAD
-	private String label;
 	private String number;
-	
-=======
-	private String number;
-	
-
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 
 	@Column
 	private String openningDate;
-	
-	@Column
+
+	@OneToOne
+	@JoinColumn(name = "card_id", referencedColumnName = "id")
 	private Card card;
+
+	@OneToOne
+	@JoinColumn(name = "check_id", referencedColumnName = "id")
+	private Cheque check;
 
 	public Account() {
 	}
 
-<<<<<<< HEAD
-
-	public Account(Integer id, Float balance, String number, String openningDate, Cheque cheque, Card card) {
-=======
-
-
 	public Account(Integer id, Float balance, String number, String openningDate, Cheque cheque, Card card) {
 
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 		this.id = id;
 		this.balance = balance;
 		this.number = number;
@@ -80,7 +67,6 @@ public class Account {
 		this.balance = balance;
 	}
 
-
 	public String getOpenningDate() {
 		return openningDate;
 	}
@@ -89,32 +75,30 @@ public class Account {
 		this.openningDate = openningDate;
 	}
 
-<<<<<<< HEAD
-=======
-	
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 	public String getNumber() {
 		return number;
 	}
-
 
 	public void setNumber(String number) {
 		this.number = number;
 	}
 
-
 	public Card getCard() {
 		return card;
 	}
 
-
 	public void setCard(Card card) {
 		this.card = card;
 	}
-	
-	
-<<<<<<< HEAD
-=======
 
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
+	public Cheque getCheck() {
+		return check;
+	}
+
+	public void setCheck(Cheque check) {
+		this.check = check;
+	}
+	
+	
+
 }

@@ -35,54 +35,80 @@
 
 </head>
 <body>
-	
+
 	<section class="head"></section>
 
 
 	<!-- Footer -->
 
 
-		<section class="account-body">
-			<div class="header-account">
-				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
-				<div class="transfer-button">
-					<a href="transfer.html?id=${id}">
-						<button class="button">Faire un virement</button>
-					</a>
-				</div>
-			</div>
-			<div class="account-list">
-				<div class="left-list">
-				<h2>Liste des comptes courant </h2>
+	<section class="account-body">
+		<div class="header-account">
+			<h1 class="page-title">Liste des comptes de ${client.firstname}
+				${client.lastname }</h1>
+
+		</div>
+		<div class="account-list">
+			<div class="left-list">
+				<h2>Liste des comptes courant</h2>
 				<c:if test="${empty currentAccounts}">
-				<h4> Aucun compte associé à ce client.</h4>
+					<h4>Aucun compte associé à ce client.</h4>
 				</c:if>
 				<c:if test="${not empty currentAccounts}">
-					<table>
-					<tr>
-						<th> Numero de compte </th>
-						<th class="balance"> Solde en &#8364</th>
-					</tr>
-					<c:forEach var="currentAccount" items="${currentAccounts }">
-						<tr class="data">
-							<td>${currentAccount.number}</td>
-							<td class="balance">${currentAccount.balance}</td>
-						</tr>
+					<c:forEach var="CurrentAccount" items="${currentAccounts}">
+						<p class="name">Numéro de compte : ${currentAccount.number}</p>
+						<p class="text">Solde de compte : ${currentAccount.balance}</p>
+						<p class="text">Date d'ouverture du compte :
+							${currentAccount.openningDate}</p>
+						<p class="text">Label du compte : ${currentAccount.label}</p>
+						<div class="button-container">
+							<div>
+								<a href="transfer.html?id=${id}">
+									<button class="button">Faire un virement</button>
+								</a>
+							</div>
+							<div>
+								<a href="Card.html?id=${currentAccount.id}">
+									<button class="button">Commander une carte</button>
+								</a>
+							</div>
+							<div>
+								<a href="Cheque.html?id=${currentAccount.id}">
+									<button class="button">Commander un cheque</button>
+								</a>
+							</div>
+							<div>
+								<a href="withdrawal.html?id=${currentAccount.id}">
+									<button class="button">Faire un retrait</button>
+								</a>
+							</div>
+						</div>
 					</c:forEach>
-					</table>
-					</c:if>
-				</div>
-				<div class="right-list">
-					<h2>Liste des comptes epargne</h2>
-					<c:if test="${empty savingAccounts}">
-					<h4> Aucun compte associé à ce client.</h4>
-					</c:if>
-					<c:if test="${not empty savingAccounts}">
 					<table>
-					<tr>
-						<th> Numero de compte </th>
-						<th class="balance"> Solde en &#8364</th>
-					</tr>
+						<tr>
+							<th>Numero de compte</th>
+							<th class="balance">Solde en &#8364</th>
+						</tr>
+						<c:forEach var="currentAccount" items="${currentAccounts }">
+							<tr class="data">
+								<td>${currentAccount.number}</td>
+								<td class="balance">${currentAccount.balance}</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</c:if>
+			</div>
+			<div class="right-list">
+				<h2>Liste des comptes epargne</h2>
+				<c:if test="${empty savingAccounts}">
+					<h4>Aucun compte associé à ce client.</h4>
+				</c:if>
+				<c:if test="${not empty savingAccounts}">
+					<table>
+						<tr>
+							<th>Numero de compte</th>
+							<th class="balance">Solde en &#8364</th>
+						</tr>
 						<c:forEach var="savingAccount" items="${savingAccounts }">
 							<tr class="data">
 								<td>${savingAccount.number}</td>
@@ -90,17 +116,17 @@
 							</tr>
 						</c:forEach>
 					</table>
-					</c:if>
-				</div>
+				</c:if>
 			</div>
-			<div class="footer-button">
-				<a href="index.html">
-					<button class="button">Retour à l'accueil</button>
-				</a>
-			</div>
-		</section>
-		
-		<!-- Footer -->
+		</div>
+		<div class="footer-button">
+			<a href="index.html">
+				<button class="button">Retour à l'accueil</button>
+			</a>
+		</div>
+	</section>
+
+	<!-- Footer -->
 
 	<footer>
 		<div class="container">

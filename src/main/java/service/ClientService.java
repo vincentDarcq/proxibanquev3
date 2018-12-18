@@ -1,9 +1,7 @@
 package service;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
+
 import metier.Account;
 import metier.Client;
 import persistence.AccountDao;
@@ -12,12 +10,8 @@ import persistence.ClientDao;
 public class ClientService {
 
 	private static final ClientService INSTANCE = new ClientService();
-<<<<<<< HEAD
 	private ClientDao daoClient;
-=======
-	
-	private  ClientDao daoClient;
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
+
 	private AccountDao daoAccount;
 
 	/**
@@ -40,7 +34,6 @@ public class ClientService {
 	public Client read(String lastname, String firstname) {
 		return this.daoClient.read(lastname, firstname);
 	}
-<<<<<<< HEAD
 
 
 	public boolean withDraw(float cash, Integer debitId) {
@@ -56,8 +49,7 @@ public class ClientService {
 			}
 			return withDrawOK;
 		}
-}
-=======
+
 	
 	public boolean transfer(Float value, Integer debitId, Integer creditId, Integer clientId) {
 		boolean transferOK = true;
@@ -82,5 +74,3 @@ public class ClientService {
 
 	
 	}
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
-

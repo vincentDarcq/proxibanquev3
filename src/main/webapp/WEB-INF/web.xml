@@ -35,4 +35,22 @@
 		<servlet-name>TransferServlet</servlet-name>
 		<url-pattern>/transfer.html</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>CreateCardServlet</servlet-name>
+		<servlet-class>presentation.CreateCardServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateCardServlet</servlet-name>
+		<url-pattern>/createCard.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CreateCheckServlet</servlet-name>
+		<servlet-class>presentation.CreateCheckServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreateCheckServlet</servlet-name>
+		<url-pattern>/CreateCheck.html</url-pattern>
+	</servlet-mapping>
 </web-app>
