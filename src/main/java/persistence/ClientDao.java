@@ -41,8 +41,8 @@ public class ClientDao extends AbstractDao<Client> {
 		try {
 		client= query.getSingleResult();
 		} catch (PersistenceException e) {
-	}
-	
+	}	
 		return client;
 	}
+	
 }
