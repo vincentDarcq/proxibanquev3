@@ -12,6 +12,12 @@ import metier.Client;
 import service.AccountService;
 import service.ClientService;
 
+/**
+ * Classe qui gère la page web pour un retrait.
+ * 
+ * @author Adminl
+ *
+ */
 public class WithdrawalServlet extends HttpServlet {
 
 	
@@ -33,6 +39,14 @@ public class WithdrawalServlet extends HttpServlet {
 		Integer accoundId = Integer.parseInt(req.getParameter("accountId"));
 		Float val = Float.parseFloat(req.getParameter("amount"));
 		Boolean withdrawOK = ClientService.getInstance().withDraw(val, accoundId);
+<<<<<<< HEAD
+		if (!withdrawOK) {
+			req.setAttribute("withdrawRate", withdrawOK);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/views/error.jsp").forward(req, resp);
+		} else {
+			this.getServletContext().getRequestDispatcher("/WEB-INF/views/tableau.jsp").forward(req, resp);
+		}
+=======
 		Client client  = ClientService.getInstance().read(clientId);
 		if(!withdrawOK) {
 			req.setAttribute("withdrawRate", withdrawOK);
@@ -42,5 +56,6 @@ public class WithdrawalServlet extends HttpServlet {
 			//this.getServletContext().getRequestDispatcher("/WEB-INF/views/withdrawal_OK.jsp").forward(req, resp);
 			resp.sendRedirect(this.getServletContext().getContextPath() + "/tableau.html?id=" + client.getId());
 		}	
+>>>>>>> 88ad1de5a2f0e6005891f96e327cd5c6083ad159
 	}
 }

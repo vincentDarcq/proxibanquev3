@@ -14,6 +14,14 @@ import javax.persistence.OneToOne;
 
 import javax.persistence.Table;
 
+/**
+ * Classe définissant le compte d'un client. Un compte a en aatribut un id, un
+ * montant(balance), un numéro et une date d'ouverture. Un compte peut avoir une
+ * carte et un chèque.
+ * 
+ * @author Adminl
+ *
+ */
 @Entity
 @Table(name = "account")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -38,42 +46,31 @@ public class Account {
 	@JoinColumn(name = "card_id", referencedColumnName = "id")
 	private Card card;
 
-
 	@OneToOne
 	@JoinColumn(name = "check_id", referencedColumnName = "id")
 	private Cheque check;
 
+	/**
+	 * Constructeur d'initialisation par défaut.
+	 */
 	public Account() {
 	}
 
-
-
-
-
-/**	public Account(Integer id, Float balance, String number, String openningDate, Cheque cheque, Card card) {
-
-
-		this.id = id;
-		this.balance = balance;
-		this.number = number;
-		this.openningDate = openningDate;
-	}**/
-	
-	
-
-	//public Account(Integer id, Float balance, String label, String number, String openningDate) {
-
+	/**Constructeur d'initialisation avec les attributs.
+	 * @param id
+	 * @param balance
+	 * @param number
+	 * @param openningDate
+	 * @param cheque
+	 * @param card
+	 */
 	public Account(Integer id, Float balance, String number, String openningDate, Cheque cheque, Card card) {
-
 
 		this.id = id;
 		this.balance = balance;
 		this.number = number;
 		this.openningDate = openningDate;
 	}
-
-
-
 
 	public Integer getId() {
 		return id;
@@ -99,7 +96,6 @@ public class Account {
 		this.openningDate = openningDate;
 	}
 
-
 	public String getNumber() {
 		return number;
 	}
@@ -107,7 +103,6 @@ public class Account {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-
 
 	public Card getCard() {
 		return card;
@@ -124,6 +119,5 @@ public class Account {
 	public void setCheck(Cheque check) {
 		this.check = check;
 	}
-	
 
 }

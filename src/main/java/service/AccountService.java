@@ -14,6 +14,12 @@ import persistence.ClientDao;
 import persistence.CardDao;
 import persistence.ChequeDao;
 
+/**
+ * Classe comprenant les méthodes qui créent les objets relatifs au client.
+ * 
+ * @author Adminl
+ *
+ */
 public class AccountService {
 
 	private static final AccountService INSTANCE = new AccountService();
@@ -23,23 +29,32 @@ public class AccountService {
 	private CardDao cardDao;
 	private ChequeDao CheckDao;
 
-
 	/**
 	 * Retourne le singleton de la classe.
 	 * 
 	 * @return Le singleton.
 	 */
+	/**
+	 * Méthode pour récupérer le singleton.
+	 * 
+	 * @return
+	 */
 	public static AccountService getInstance() {
 		return AccountService.INSTANCE;
 	}
 
+	/**
+	 * Constructeur d'initialisation avec attributs.
+	 * 
+	 */
 	public AccountService() {
 		this.daoAccount = AccountDao.getInstance();
 		this.clientDao = ClientDao.getInstance();
-		this.cardDao = CardDao.getInstance();	}
+		this.cardDao = CardDao.getInstance();
+	}
 
 	/**
-	 * Recup�re la liste de tous les Accounts suivis par le conseiller.
+	 * Recup�re la liste de tous les comptes d'un client.
 	 * 
 	 * @return La liste des Accounts du conseiller.
 	 */
@@ -50,11 +65,22 @@ public class AccountService {
 
 	}
 
-
+	/**
+	 * Méthode retournant les informations du compte d'un client.
+	 * 
+	 * @param id
+	 * @return
+	 */
 	public Account read(Integer id) {
 		return this.daoAccount.read(id);
 	}
 
+	/**
+	 * Méthode qui retourne la liste des comptes épargne d'un client.
+	 * 
+	 * @param idClient
+	 * @return
+	 */
 	public List<Account> getAllSavingAccounts(Integer idClient) {
 		List<Account> SavingAccounts = new ArrayList<>();
 
@@ -93,7 +119,13 @@ public class AccountService {
 		return this.daoAccount;
 	}
 
-
+	/**
+	 * Méthode pour créer une nouvelle carte bancaire.
+	 * 
+	 * @param accountId
+	 * @param type
+	 * @return
+	 */
 	public boolean linkNewCard(Integer accountId, String type) {
 		boolean resultOk = true;
 		Account account = this.daoAccount.read(accountId);
@@ -127,9 +159,13 @@ public class AccountService {
 		return resultOk;
 	}
 
-
-
-
+	/**
+	 * Méthode pour créer un nouveau chéquier.
+	 * 
+	 * @param accountId
+	 * @param type
+	 * @return
+	 */
 	public boolean linkNewCheck(Integer accountId, String type) {
 		boolean resultOk = true;
 		Account account = this.daoAccount.read(accountId);

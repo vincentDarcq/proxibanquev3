@@ -7,6 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Classe définissant la localisation d'un client. Une localisation se définit
+ * par une id, un pays, une ville, un code postal et une adresse.
+ * 
+ * @author Adminl
+ *
+ */
 @Entity
 @Table
 public class Address {
@@ -15,24 +22,33 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer id;
-	
+
 	@Column
 	private String country;
-	
+
 	@Column
 	private String city;
-	
+
 	@Column
 	private String postalCode;
-	
+
 	@Column
 	private String address;
-	
-	
 
+	/**
+	 * Constructeur d'initialisation par défaut.
+	 */
 	public Address() {
 	}
 
+	/**
+	 * Constructeur d'initialisation avec les attributs.
+	 * 
+	 * @param country
+	 * @param city
+	 * @param postalCode
+	 * @param address
+	 */
 	public Address(String country, String city, String postalCode, String address) {
 		this.country = country;
 		this.city = city;
@@ -71,6 +87,5 @@ public class Address {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
+
 }

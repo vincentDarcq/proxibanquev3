@@ -1,33 +1,36 @@
 package presentation;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import metier.Account;
-import metier.Client;
 import service.AccountService;
-import service.ClientService;
 
+/**
+ * Classe qui gère la page web d'ajout d'une carte bancaire.
+ * 
+ * @author Adminl
+ *
+ */
 public class CardServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private AccountService accS = AccountService.getInstance();
 
+	/*
+	 * méthode qui gère la requête http et dirige vers la page demandée.
+	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		// Integer id = Integer.parseInt(req.getParameter("id"));
-		// Client client = ClientService.getInstance().read(id);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Card.jsp").forward(req, resp);
-		// resp.sendRedirect(this.getServletContext().getContextPath() +
-		// "/WEB-INF/views/card.html?id=" + client.getId());
 	}
 
+	/*
+	 * méthode qui récupère des données saisies par l'utilisateur et envoie sur la
+	 * page web demandée avec ces données.
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer clientId = Integer.parseInt(req.getParameter("id"));

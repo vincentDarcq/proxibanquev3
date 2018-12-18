@@ -2,8 +2,21 @@ package persistence;
 
 import java.util.List;
 
-public interface Dao <T>{
+/**
+ * Interface Data Access Object.
+ * 
+ * @author Adminl
+ *
+ * @param <T>
+ */
+public interface Dao<T> {
 
+	/**
+	 * Recupere les informations d'une id.
+	 * 
+	 * @param id
+	 * @return
+	 */
 	public T read(Integer id);
 
 	/**
@@ -20,6 +33,20 @@ public interface Dao <T>{
 	 * @return l'entite mise � jour
 	 */
 	public T update(T entity);
+
+	/**
+	 * Création d'une entité.
+	 * 
+	 * @param entity
+	 * @return
+	 */
 	public T create(T entity);
+
+	/**
+	 * Suppression d'une entité.
+	 * 
+	 * @param id
+	 * @return
+	 */
 	public boolean delete(Integer id);
 }
