@@ -11,10 +11,6 @@ public class ClientService {
 
 	private static final ClientService INSTANCE = new ClientService(AccountDao.getInstance(), ClientDao.getInstance());
 	private ClientDao daoClient;
-
-	
-
-
 	private AccountDao daoAccount;
 
 	/**
