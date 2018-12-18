@@ -24,20 +24,20 @@ public class WithdrawalServlet extends HttpServlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		Account account = AccountService.getInstance().read(id);
 		req.setAttribute("accounts", account);
-		this.getServletContext().getRequestDispatcher("").forward(req, resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/withdrawal.jsp").forward(req, resp);
 
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer accoundId = Integer.parseInt(req.getParameter("id"));
-		Float val = Float.parseFloat(req.getParameter("value"));
+		Float val = Float.parseFloat(req.getParameter("amount"));
 		Boolean withdrawOK = ClientService.getInstance().withDraw(val, accoundId);
 		if(!withdrawOK) {
 			req.setAttribute("withdrawRate", withdrawOK);
-			this.getServletContext().getRequestDispatcher("/WEB-INF/views/withdrawal.jsp").forward(req, resp);			
+			this.getServletContext().getRequestDispatcher("/WEB-INF/views/error.jsp").forward(req, resp);			
 		} else {
-			this.getServletContext().getRequestDispatcher("").forward(req, resp);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/views/tableau.jsp").forward(req, resp);
 		}	
 	}
 }

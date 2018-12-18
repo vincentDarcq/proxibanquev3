@@ -125,6 +125,10 @@ th, td {
 	text-align: right;
 }
 
+.action{
+	width: 360px;
+}
+
 tr.data:hover {
 	background-color: #FED136;
 }

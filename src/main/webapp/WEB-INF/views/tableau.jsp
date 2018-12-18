@@ -48,47 +48,14 @@
 				</a>
 			</div>
 		<section class="account-body">
-			<div class="header-account">
+			
 				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
-	<!--			<div style="text-align:center;display:inline;margin:50px">
-				<div class="transfer-button">
-					<a href="transfer.html?id=${id}">
-						<button class="button">Faire un virement</button>
-						
-					</a>
-				</div>
-				<div class="transfer-button">
-					<a href="card.html?id=${id}">
-						<button class="button">Commander une carte</button>
-						
-					</a>
-				</div>
-				<div class="transfer-button">
-					<a href="cheque.html?id=${id}">
-						<button class="button">Commander un chequier</button>
-						
-					</a>
-				</div>
-				</div>
-			</div>  
-			<div class="account-list">
-				<div class="left-list">
-				<h2>Liste des comptes courant </h2>
-
-
-	<section class="account-body">
-		<div class="header-account">
-			<h1 class="page-title">Liste des comptes de ${client.firstname}
-				${client.lastname }</h1>
-
+			
+							<div class="footer-button">
+			<a href="transfer.html?id=${id}">
+				<button class="button">Faire un virement</button>
+			</a>
 		</div>
-		
-		-->
-							<div>
-								<a href="transfer.html?id=${id}">
-									<button class="button">Faire un virement</button>
-								</a>
-							</div>
 		
 		<div class="account-list">
 			<div class="left-list">
@@ -104,13 +71,14 @@
 						<tr>
 							<th>Numero de compte</th>
 							<th class="balance">Solde en &#8364</th>
+							<th class="action">Actions</th>
 						</tr>
 						<c:forEach var="currentAccount" items="${currentAccounts }">
 							<tr class="data">
 								<td>${currentAccount.number}</td>
 								<td class="balance">${currentAccount.balance}</td>
-							</tr>
-							<div class="button-container">
+								<td>
+								<div class="button-container">   
 							<div>
 								<a href="Card.html?id=${currentAccount.id}">
 									<button class="button">Commander une carte</button>
@@ -127,6 +95,8 @@
 								</a>
 							</div>
 						</div>
+								</td>
+							</tr>
 						</c:forEach>
 						
 					</table>
@@ -149,11 +119,7 @@
 								<td class="balance">${savingAccount.balance}</td>
 							</tr>
 							<div class="button-container">
-							<div>
-								<a href="Card.html?id=${savingAccount.id}">
-									<button class="button">Commander une carte</button>
-								</a>
-							</div>
+							
 							<div>
 								<a href="Cheque.html?id=${savingAccount.id}">
 									<button class="button">Commander un cheque</button>
@@ -172,20 +138,7 @@
 				</div>
 			</div>
 			
-		</section>
-		
-		<!-- Footer -->
-
-			
-			</div>
-		</div>
-		<div class="footer-button">
-			<a href="index.html">
-				<button class="button">Retour à l'accueil</button>
-			</a>
-		</div>
-	</section>
-
+	
 	<!-- Footer -->
 
 

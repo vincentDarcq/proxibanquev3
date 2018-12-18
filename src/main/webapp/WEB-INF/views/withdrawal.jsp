@@ -45,9 +45,8 @@
 	<form method="post" action="">
 		<div class="centered-input">
 			<div>
-				<label for="value" class="text"> Montant du retrait : </label> <input
-					type="number" step=0.1 name="value" id="value"
-					style="margin-left: 0.5em;">
+				<label for="value" class="text"> Montant du retrait : </label> 
+				<input id="identity" name="amount">
 				<button style="margin-left: 2em;" class="button">Confirmer</button>
 			</div>
 		</div>

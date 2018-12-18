@@ -37,11 +37,7 @@
 
 	<!-- Header -->
 	
-	<div class="footer-button" style="margin-left:1700px">
-				<a href="index.html">
-					<button class="button">Se Déconnecter</button>
-				</a>
-			</div>
+	
 
 <body>
 	<section class="head"></section>
@@ -62,6 +58,12 @@
 		<c:if test="${fn:length(accounts) > 1}">
 			<h1 class="page-title">Transfert pour ${client.firstname}
 				${client.lastname }</h1>
+				
+				<div class="footer-button" style="margin-left:1700px">
+				<a href="index.html">
+					<button class="button">Se Déconnecter</button>
+				</a>
+			</div>
 			<div class="transfer-container">
 				<form method="post" action="">
 
@@ -115,7 +117,6 @@
 
 				<button class="button">Retour au tableau de bord</button>
 
-				<button class="button">Retour à l'accueil</button>
 
 			</a>
 		</div>

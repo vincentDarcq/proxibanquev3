@@ -51,7 +51,7 @@ public class ClientService {
 			}else if(compteDebite.getBalance() + cash <0) {
 				withDrawOK = false;
 			}else {
-				compteDebite.setBalance(compteDebite.getBalance() + cash);
+				compteDebite.setBalance(compteDebite.getBalance() - cash);
 				this.daoAccount.update(compteDebite);
 			}
 			return withDrawOK;

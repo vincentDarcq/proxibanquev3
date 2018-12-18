@@ -46,6 +46,16 @@
 		<servlet-name>CardServlet</servlet-name>
 		<url-pattern>/Card.html</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Retrait</servlet-name>
+		<servlet-class>presentation.WithdrawalServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Retrait</servlet-name>
+		<url-pattern>/withdrawal.html</url-pattern>
+	</servlet-mapping>
+	
 	
 
 </web-app>

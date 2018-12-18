@@ -34,7 +34,7 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 
-<
+
 <body>
 
     <section class="head"></section>
@@ -42,7 +42,7 @@
 
     <div class="transfer-button">
         <a href="tableau.html?id=${clientId}">
-            <button class="button">Retour à l'accueil</button>
+            <button class="button">Retour au tableau de bord</button>
         </a>
     </div>
 
