@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Outil d'affichage des comptes</title>
+<title>Accueil</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,21 +34,52 @@
 <link href="css/index.css" rel="stylesheet">
 
 </head>
-<body>
+
+<body id="page-top">
+
+	<!-- Header -->
 	
-	<section class="head"></section>
-
-
+	<header class="masthead">
+	
+		<div class="container">
+			<div class="intro-text"
+				style="padding-top: 150px;">
+				<div class="intro-lead-in">Bienvenue sur le système
+					d'information</div>
+				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
+			</div>
+		</div>
+		
+	</header>
 	<!-- Footer -->
 
-
+	<div class="footer-button" style="margin-left:1700px">
+				<a href="index.html">
+					<button class="button">Se Déconnecter</button>
+				</a>
+			</div>
 		<section class="account-body">
 			<div class="header-account">
 				<h1 class="page-title">Liste des comptes de ${client.firstname} ${client.lastname }</h1>
+				<div style="text-align:center;display:inline;margin:50px">
 				<div class="transfer-button">
 					<a href="transfer.html?id=${id}">
 						<button class="button">Faire un virement</button>
+						
 					</a>
+				</div>
+				<div class="transfer-button">
+					<a href="card.html?id=${id}">
+						<button class="button">Commander une carte</button>
+						
+					</a>
+				</div>
+				<div class="transfer-button">
+					<a href="cheque.html?id=${id}">
+						<button class="button">Commander un chequier</button>
+						
+					</a>
+				</div>
 				</div>
 			</div>
 			<div class="account-list">
@@ -93,11 +124,7 @@
 					</c:if>
 				</div>
 			</div>
-			<div class="footer-button">
-				<a href="index.html">
-					<button class="button">Retour à l'accueil</button>
-				</a>
-			</div>
+			
 		</section>
 		
 		<!-- Footer -->

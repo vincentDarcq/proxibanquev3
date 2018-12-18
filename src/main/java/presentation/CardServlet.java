@@ -13,8 +13,7 @@ import metier.Client;
 import service.AccountService;
 import service.ClientService;
 
-
-public class TransferServlet extends HttpServlet{
+public class CardServlet extends HttpServlet{
 
 
 	private static final long serialVersionUID = 1L;
@@ -22,21 +21,11 @@ public class TransferServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//super.doGet(req, resp);
 
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		Client client = ClientService.getInstance().read(id);
-		List<Account> accounts = this.accS.getAll(id);
-		if (accounts.size() <= 1) {
-			req.setAttribute("client", client);
-			req.setAttribute("clientId", id);
-			req.getServletContext().getRequestDispatcher("/WEB-INF/views/error_transfer.jsp").forward(req, resp);
-		} else {
-			req.setAttribute("accounts", accounts);
-			req.setAttribute("client", client);
-			req.setAttribute("clientId", id);
-			this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer.jsp").forward(req, resp);
-		}
+		//Integer id = Integer.parseInt(req.getParameter("id"));
+		//Client client = ClientService.getInstance().read(id);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/card.jsp").forward(req, resp);
+		//resp.sendRedirect(this.getServletContext().getContextPath() + "/WEB-INF/views/card.html?id=" + client.getId());
 	}
 	
 	@Override
@@ -61,4 +50,5 @@ public class TransferServlet extends HttpServlet{
 	    }
 
 }
+
 

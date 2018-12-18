@@ -16,14 +16,11 @@ public class AccountService {
 	
 	private static final AccountService INSTANCE = new AccountService();
 	private  AccountDao daoAccount;
-<<<<<<< HEAD
+
 	private ClientDao clientDao;
 	private CardDao CardDao;
 
-=======
 
-	private ClientDao clientDao;
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 
 	/**
 	 * Retourne le singleton de la classe.
@@ -51,12 +48,7 @@ public class AccountService {
 
 	}
 	
-<<<<<<< HEAD
-=======
 
-	
-	
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 	public Account read(Integer id) {
 		return this.daoAccount.read(id);
 	}
@@ -98,7 +90,7 @@ public class AccountService {
 	public AccountDao getDao() {
 		return this.daoAccount;
 	}
-	
+	/**
 	public boolean linkNewCard(Integer accountId, String type) {
 		boolean resultOk = true;
 		Account account = this.daoAccount.read(accountId);
@@ -130,4 +122,5 @@ public class AccountService {
 		}
 		return resultOk;
 	}
+	**/
 }

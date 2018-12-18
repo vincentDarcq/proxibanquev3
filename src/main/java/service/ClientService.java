@@ -1,9 +1,5 @@
 package service;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 import metier.Account;
 import metier.Client;
 import persistence.AccountDao;
@@ -11,13 +7,8 @@ import persistence.ClientDao;
 
 public class ClientService {
 
-	private static final ClientService INSTANCE = new ClientService();
-<<<<<<< HEAD
+	private static final ClientService INSTANCE = new ClientService(AccountDao.getInstance(), ClientDao.getInstance());
 	private ClientDao daoClient;
-=======
-	
-	private  ClientDao daoClient;
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
 	private AccountDao daoAccount;
 
 	/**
@@ -30,7 +21,11 @@ public class ClientService {
 	}
 
 	public ClientService() {
-		this.daoClient = ClientDao.getInstance();
+		
+	}
+	public ClientService(AccountDao daoAccount, ClientDao daoClient) {
+		this.daoClient = daoClient;
+		this.daoAccount = daoAccount;
 	}
 
 	public Client read(Integer id) {
@@ -40,7 +35,7 @@ public class ClientService {
 	public Client read(String lastname, String firstname) {
 		return this.daoClient.read(lastname, firstname);
 	}
-<<<<<<< HEAD
+
 
 
 	public boolean withDraw(float cash, Integer debitId) {
@@ -56,8 +51,8 @@ public class ClientService {
 			}
 			return withDrawOK;
 		}
-}
-=======
+
+
 	
 	public boolean transfer(Float value, Integer debitId, Integer creditId, Integer clientId) {
 		boolean transferOK = true;
@@ -69,7 +64,12 @@ public class ClientService {
 		} else if (compteDebite.getBalance() - value < 0) {
 			transferOK = false;
 			return transferOK;
-		} else {
+		} else if (value > 900) {
+			transferOK = false;
+			return transferOK;
+		}
+		
+		else {
 			compteCredite.setBalance(compteCredite.getBalance() + value);
 			this.daoAccount.update(compteCredite);
 
@@ -82,5 +82,5 @@ public class ClientService {
 
 	
 	}
->>>>>>> 932fe31ad0a597a03490beda5d31e9b2adf81290
+
 

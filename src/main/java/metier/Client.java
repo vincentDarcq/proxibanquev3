@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -40,7 +41,12 @@ public class Client {
 	@OneToMany
 	@JoinColumn(name = "accounds_id", referencedColumnName = "id")
 	private List<Account> accounts;
-
+	
+	@OneToOne
+	@JoinColumn(name = "card_id", referencedColumnName = "id")
+	private Card card;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -95,6 +101,14 @@ public class Client {
 
 	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
+	}
+	
+	public Card getCard() {
+		return card;
+	}
+
+	public void setCard(Card card) {
+		this.card = card;
 	}
 
 	public Account getAccountById(Integer searchId) {
