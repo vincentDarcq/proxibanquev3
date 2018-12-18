@@ -40,7 +40,7 @@ public class Cheque {
 		this.sendDate = sendDate;
 	}
 
-	public Object getReceptionDate() {
+	public LocalDate getReceptionDate() {
 		return receptionDate;
 	}
 

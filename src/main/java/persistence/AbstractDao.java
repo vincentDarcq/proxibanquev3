@@ -4,15 +4,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-
-public class AbstractDao<T> implements Dao<T> {
+public abstract class  AbstractDao<T> implements Dao<T> {
 
 	protected EntityManager em;
 
 	public AbstractDao() {
 		this.em = MySqlConnection.getInstance().getEntityManager();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	protected T read(Integer id, T entity) {
 		T result = null;
@@ -22,9 +21,9 @@ public class AbstractDao<T> implements Dao<T> {
 
 	@Override
 	public List<T> readAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public T update(T entity) {
 		this.em.getTransaction().begin();
@@ -40,6 +39,7 @@ public class AbstractDao<T> implements Dao<T> {
 		this.em.getTransaction().commit();
 		return entity;
 	}
+
 	@Override
 	public boolean delete(Integer id) {
 		this.em.getTransaction().begin();
@@ -49,9 +49,5 @@ public class AbstractDao<T> implements Dao<T> {
 		return true;
 	}
 
-	@Override
-	public T read(Integer id) {
-		return null;
-	}
 
 }

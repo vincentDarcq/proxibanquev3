@@ -35,17 +35,17 @@
 </head>
 <body>
 	<section class="head"></section>
-	<h1 class="page-title">Commander une carte</h1>
+	<h1 class="page-title">Effectuer un Retrait de liquide</h1>
 
 
-	<c:if test="${not empty createRate}">
-		<h1 class="page-title">Erreur : La commande est impossible</h1>
+	<c:if test="${not empty withdrawRate}">
+		<h1 class="page-title">Erreur : Le retrait est impossible</h1>
 	</c:if>
 
 	<form method="post" action="">
 		<div class="centered-input">
 			<div>
-				<label for="type" class="text"> Type de carte : </label> <input
+				<label for="value" class="text"> Montant du retrait : </label> <input
 					type="number" step=0.1 name="value" id="value"
 					style="margin-left: 0.5em;">
 				<button style="margin-left: 2em;" class="button">Confirmer</button>
